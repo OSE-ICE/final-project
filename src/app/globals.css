@@ -1,0 +1,23 @@
+.container {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 601px) {
+  .container {
+    width: calc(50% - 20px);
+  }
+  .container-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
