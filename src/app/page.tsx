@@ -1,12 +1,11 @@
 "use client";
-import Header from "@/components/header";
 import HomePage from "./home/page";
 import "./globals.css";
+import Layout from "./layout";
 
 export default function Page() {
   return (
     <div>
-      <Header />
       <HomePage />
     </div>
   );
