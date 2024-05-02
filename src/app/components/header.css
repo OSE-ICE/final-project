@@ -2,12 +2,15 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 0px;
+  padding-right: 10px;
   background-color: #f8f8f8;
 }
 
 .logo {
-  width: 200px;
+  width: 250px;
+  border: 0;
+  margin: 0;
 }
 
 nav ul {
