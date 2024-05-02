@@ -2,6 +2,9 @@ import React from "react";
 import "../globals.css";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import hamburger from "../assets/hamburger.jpg";
+import steak from "../assets/steak.jpg";
+import pizza from "../assets/pizza.jpg";
 
 export default function HomePage() {
   return (
@@ -10,16 +13,16 @@ export default function HomePage() {
         <div className="container">
           <Carousel>
             <div>
-              <img src="./assets/hamburger.JPG" />
+              <img src={hamburger.src} />
               <p className="legend">Hamburger</p>
             </div>
             <div>
-              <img src="./assets/image2.png" />
-              <p className="legend">Legend 2</p>
+              <img src={steak.src} />
+              <p className="legend">Steak</p>
             </div>
             <div>
-              <img src="./assets/image3.png" />
-              <p className="legend">Legend 3</p>
+              <img src={pizza.src} />
+              <p className="legend">Pizza</p>
             </div>
           </Carousel>
         </div>
