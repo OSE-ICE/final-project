@@ -5,6 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import hamburger from "../assets/hamburger.jpg";
 import steak from "../assets/steak.jpg";
 import pizza from "../assets/pizza.jpg";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -13,7 +14,7 @@ export default function HomePage() {
         <div className="container">
           <Carousel>
             <div>
-              <img src={hamburger.src} />
+              <img className="carousel-img" src={hamburger.src} />
               <p className="legend">Hamburger</p>
             </div>
             <div>
@@ -26,9 +27,20 @@ export default function HomePage() {
             </div>
           </Carousel>
         </div>
-        <div className="container">Content of container 2</div>
-        <div className="container">Content of container 3</div>
-        <div className="container">Content of container 4</div>
+        <div className="container">
+          <h2>Start your order</h2>
+          <Link href="../dishes">
+            <button>Order</button>
+          </Link>
+        </div>
+        <div className="container">
+          <h2>Find your order</h2>
+          <input type="email" placeholder="Enter your e-mail" />
+          <button>Find</button>
+        </div>
+        <div className="container">
+          <h2>Dish of the day</h2>
+        </div>
       </div>
     </div>
   );
