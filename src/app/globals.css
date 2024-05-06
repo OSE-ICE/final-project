@@ -28,3 +28,14 @@
   align-items: center;
   text-align: center;
 }
+
+.random-meal-img {
+  max-width: 50%;
+}
+
+/* DishesPage.css */
+.button {
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin-left: 33%;
+}
