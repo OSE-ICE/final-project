@@ -18,11 +18,11 @@ export default function HomePage() {
               <p className="legend">Hamburger</p>
             </div>
             <div>
-              <img src={steak.src} />
+              <img className="carousel-img" src={steak.src} />
               <p className="legend">Steak</p>
             </div>
             <div>
-              <img src={pizza.src} />
+              <img className="carousel-img" src={pizza.src} />
               <p className="legend">Pizza</p>
             </div>
           </Carousel>
@@ -30,7 +30,7 @@ export default function HomePage() {
         <div className="container">
           <h2>Start your order</h2>
           <Link href="../dishes">
-            <button>Order</button>
+            <button className="button">Order</button>
           </Link>
         </div>
         <div className="container">

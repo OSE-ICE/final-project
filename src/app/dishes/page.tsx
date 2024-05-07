@@ -44,6 +44,9 @@ export default function DishesPage() {
           ) : (
             <p>Loading...</p>
           )}
+          <button className="button" onClick={fetchDish}>
+            New Dish
+          </button>
         </div>
         <div className="container">
           {dish ? (
@@ -59,13 +62,10 @@ export default function DishesPage() {
         <div className="container">
           <h2>Continue to drinks order</h2>
           <Link href="../drinks">
-            <button>Drinks</button>
+            <button className="button">Drinks</button>
           </Link>
         </div>
       </div>
-      <button className="button" onClick={fetchDish}>
-        New Dish
-      </button>
     </div>
   );
 }

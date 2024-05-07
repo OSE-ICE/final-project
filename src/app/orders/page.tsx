@@ -22,6 +22,8 @@ export default function OrdersPage() {
                 onChange={(e) => setDate(e.target.value)}
               />
             </label>
+            <br />
+            <br />
             <label>
               Time:
               <input
@@ -32,6 +34,8 @@ export default function OrdersPage() {
                 onChange={(e) => setTime(e.target.value)}
               />
             </label>
+            <br />
+            <br />
             <label>
               People:
               <input
@@ -42,6 +46,8 @@ export default function OrdersPage() {
                 onChange={(e) => setPeople(Number(e.target.value))}
               />
             </label>
+            <br />
+            <br />
             <label>
               Email:
               <input
@@ -50,8 +56,10 @@ export default function OrdersPage() {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </label>
+            <br />
+            <br />
             <Link href="../receipts">
-              <button className="button">Next</button>
+              <button className="button">Receipt</button>
             </Link>
           </form>
         </div>

@@ -30,7 +30,7 @@ export default function DrinksPage() {
         <div className="container">
           <h2>Continue to orders page</h2>
           <Link href="../orders">
-            <button>Orders</button>
+            <button className="button">Orders</button>
           </Link>
         </div>
       </div>
