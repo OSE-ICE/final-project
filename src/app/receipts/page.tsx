@@ -8,7 +8,7 @@ export default function ReceiptsPage() {
         <button className="button">Back to home</button>
       </Link>
       <div className="container-wrapper">
-        <div className="container">Container 1</div>
+        <div className="container">Reicept</div>
       </div>
     </div>
   );
