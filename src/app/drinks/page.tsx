@@ -1,8 +1,39 @@
+"use client";
+import React, { useEffect, useState } from "react";
+import "../globals.css";
+import Link from "next/link";
+
 export default function DrinksPage() {
+  const [drinks, setDrinks] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.punkapi.com/v2/beers")
+      .then((response) => response.json())
+      .then((data) => setDrinks(data))
+      .catch((error) => console.error("Error:", error));
+  }, []);
+
   return (
     <div>
-      <h1>Drinks Page</h1>
-      <p>Welcome to the drinks page!</p>
+      <div className="container-wrapper">
+        <div className="container">
+          {drinks.length > 0 ? (
+            <ul>
+              {drinks.map((drink: { name: string }, index: number) => (
+                <li key={index}>{drink.name}</li>
+              ))}
+            </ul>
+          ) : (
+            <p>Loading...</p>
+          )}
+        </div>
+        <div className="container">
+          <h2>Continue to orders page</h2>
+          <Link href="../orders">
+            <button>Orders</button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
