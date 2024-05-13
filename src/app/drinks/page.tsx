@@ -18,11 +18,23 @@ export default function DrinksPage() {
       <div className="container-wrapper">
         <div className="container">
           {drinks.length > 0 ? (
-            <ul>
-              {drinks.map((drink: { strDrink: string }, index: number) => (
-                <li key={index}>{drink.strDrink}</li>
-              ))}
-            </ul>
+            <div className="drinks-grid">
+              {drinks.map(
+                (
+                  drink: { strDrink: string; strDrinkThumb: string },
+                  index: number
+                ) => (
+                  <div key={index} className="drink-item">
+                    <img
+                      className="img-thumb"
+                      src={drink.strDrinkThumb}
+                      alt={drink.strDrink}
+                    />
+                    <p>{drink.strDrink}</p>
+                  </div>
+                )
+              )}
+            </div>
           ) : (
             <p>Loading...</p>
           )}
