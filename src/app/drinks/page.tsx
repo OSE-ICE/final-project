@@ -7,9 +7,9 @@ export default function DrinksPage() {
   const [drinks, setDrinks] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.punkapi.com/v2/beers")
+    fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a")
       .then((response) => response.json())
-      .then((data) => setDrinks(data))
+      .then((data) => setDrinks(data.drinks))
       .catch((error) => console.error("Error:", error));
   }, []);
 
@@ -19,8 +19,8 @@ export default function DrinksPage() {
         <div className="container">
           {drinks.length > 0 ? (
             <ul>
-              {drinks.map((drink: { name: string }, index: number) => (
-                <li key={index}>{drink.name}</li>
+              {drinks.map((drink: { strDrink: string }, index: number) => (
+                <li key={index}>{drink.strDrink}</li>
               ))}
             </ul>
           ) : (
