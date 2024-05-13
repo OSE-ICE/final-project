@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "../globals.css";
 import Link from "next/link";
+import { Dish, OrderType } from "../api";
 
 export default function DishesPage() {
   const [dish, setDish] = useState(null);
@@ -26,6 +27,47 @@ export default function DishesPage() {
       }
     }
     return ingredients;
+  };
+
+  const handleSelectDrinksClick = async () => {
+    if (dish) {
+      try {
+        const transformedDish: Dish = {
+          id: (dish as any).idMeal,
+          name: (dish as any).strMeal,
+          description: "", // replace with actual description
+          imageSource: (dish as any).strMealThumb,
+          price: 0, // replace with actual price
+          category: "", // replace with actual category
+          cousine: "", // replace with actual cousine
+        };
+
+        const order: OrderType = {
+          id: 0, // replace with actual id
+          email: "john.doe@example.com", // replace with actual email
+          dish: transformedDish,
+          drinks: [], // replace with actual drinks
+          count: 1, // replace with actual count
+          date: new Date(), // replace with actual date
+        };
+
+        const response = await fetch("http://localhost:3001/api/create-order", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(order),
+        });
+
+        if (response.status === 200) {
+          console.log("Dish added to order successfully");
+        } else {
+          console.log("Failed to add dish to order");
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
   };
 
   return (
@@ -62,7 +104,9 @@ export default function DishesPage() {
         <div className="container">
           <h2>Continue to drinks order</h2>
           <Link href="../drinks">
-            <button className="button">Drinks</button>
+            <button className="button" onClick={handleSelectDrinksClick}>
+              Select Drinks
+            </button>
           </Link>
         </div>
       </div>

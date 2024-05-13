@@ -59,7 +59,7 @@ export default function OrdersPage() {
             <br />
             <br />
             <Link href="../receipts">
-              <button className="button">Receipt</button>
+              <button className="button">Confirm Order</button>
             </Link>
           </form>
         </div>
