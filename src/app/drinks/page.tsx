@@ -39,25 +39,13 @@ export default function DrinksPage() {
       };
 
       setOrder({ ...order, drinks: selectedDrinks });
-
-      const response = await fetch("http://localhost:3001/api/create-order", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(order),
-      });
-
-      if (response.status === 200) {
-        console.log("Order created successfully");
-        console.log(order);
-      } else {
-        console.log("Failed to create order");
-      }
+      localStorage.setItem("order", JSON.stringify(order));
     } catch (error) {
-      console.error(error);
+      console.error("Error:", error);
     }
   };
+
+  console.log(order);
 
   return (
     <div>

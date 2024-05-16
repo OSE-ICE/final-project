@@ -65,26 +65,13 @@ export default function DishesPage() {
           "order",
           JSON.stringify({ dish: transformedDish })
         );
-
-        const response = await fetch("http://localhost:3001/api/create-order", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(order),
-        });
-
-        if (response.status === 200) {
-          console.log("Dish added to order successfully");
-          console.log(order);
-        } else {
-          console.log("Failed to add dish to order");
-        }
       } catch (error) {
         console.error(error);
       }
     }
   };
+
+  console.log(order);
 
   return (
     <div>
