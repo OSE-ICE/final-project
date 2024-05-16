@@ -1,7 +1,13 @@
 "use client";
 import React from "react";
+import { OrderType } from "../api";
 
-export const OrderContext = React.createContext({
+type OrderContextType = {
+  order: OrderType;
+  setOrder: (order: OrderType) => void;
+};
+
+export const OrderContext = React.createContext<OrderContextType>({
   order: {},
   setOrder: (order: any) => {},
 });

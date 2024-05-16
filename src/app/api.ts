@@ -16,12 +16,12 @@ export type Drink = Provision & {
 };
 
 export type OrderType = {
-  id: number;
-  email: string;
-  dish: Dish;
-  drinks: Drink[];
-  count: number;
-  date: Date;
+  id?: number;
+  email?: string;
+  dish?: Dish;
+  drinks?: Drink[];
+  count?: number;
+  date?: Date;
 };
 
 const getOrders = async (): Promise<OrderType[]> => {

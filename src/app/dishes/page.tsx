@@ -23,7 +23,35 @@ export default function DishesPage() {
   const fetchDish = () => {
     fetch("https://themealdb.com/api/json/v1/1/random.php")
       .then((response) => response.json())
-      .then((data) => setDish(data.meals[0]));
+      .then((data) => {
+        setDish(data.meals[0]);
+        setDishId(data.meals[0].idMeal);
+
+        const transformedDish: Dish = {
+          id: data.meals[0].idMeal,
+          name: data.meals[0].strMeal,
+          description: "", // replace with actual description
+          imageSource: data.meals[0].strMealThumb,
+          price: 0, // replace with actual price
+          category: "", // replace with actual category
+          cousine: "", // replace with actual cousine
+        };
+
+        const newOrder: OrderType = {
+          id: data.meals[0].idMeal, // replace with actual id
+          email: "", // replace with actual email
+          dish: transformedDish,
+          drinks: [], // replace with actual drinks
+          count: 1, // replace with actual count
+          date: new Date(), // replace with actual date
+        };
+
+        // Save the new order to the context
+        setOrder(newOrder);
+
+        // Also save the new order to local storage
+        localStorage.setItem("order", JSON.stringify(newOrder));
+      });
   };
 
   const getIngredients = (dish: any) => {
@@ -58,13 +86,10 @@ export default function DishesPage() {
           date: new Date(), // replace with actual date
         };
 
-        setOrder({ dish: transformedDish });
+        setOrder(order);
 
         // Also save the order to local storage
-        localStorage.setItem(
-          "order",
-          JSON.stringify({ dish: transformedDish })
-        );
+        localStorage.setItem("order", JSON.stringify(order));
       } catch (error) {
         console.error(error);
       }
