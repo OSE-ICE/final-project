@@ -32,7 +32,7 @@ const getOrders = async (): Promise<OrderType[]> => {
   }
 
   const response = await res.json();
-  console.log("getting expenses", response);
+  console.log("getting order", response);
   return response;
 };
 

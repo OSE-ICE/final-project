@@ -3,14 +3,21 @@ import React, { useEffect, useState } from "react";
 import "../globals.css";
 import Link from "next/link";
 import { Dish, OrderType } from "../api";
+import { OrderContext } from "../components/OrderContext";
+import { useContext } from "react";
 
 export default function DishesPage() {
   const [dish, setDish] = useState(null);
+  const [dishId, setDishId] = useState(null);
+  const { order, setOrder } = useContext(OrderContext);
 
   useEffect(() => {
     fetch("https://themealdb.com/api/json/v1/1/random.php")
       .then((response) => response.json())
-      .then((data) => setDish(data.meals[0]));
+      .then((data) => {
+        setDish(data.meals[0]);
+        setDishId(data.meals[0].idMeal);
+      });
   }, []);
 
   const fetchDish = () => {
@@ -43,13 +50,21 @@ export default function DishesPage() {
         };
 
         const order: OrderType = {
-          id: 0, // replace with actual id
-          email: "john.doe@example.com", // replace with actual email
+          id: (dish as any).idMeal, // replace with actual id
+          email: "", // replace with actual email
           dish: transformedDish,
           drinks: [], // replace with actual drinks
           count: 1, // replace with actual count
           date: new Date(), // replace with actual date
         };
+
+        setOrder({ dish: transformedDish });
+
+        // Also save the order to local storage
+        localStorage.setItem(
+          "order",
+          JSON.stringify({ dish: transformedDish })
+        );
 
         const response = await fetch("http://localhost:3001/api/create-order", {
           method: "POST",
@@ -61,6 +76,7 @@ export default function DishesPage() {
 
         if (response.status === 200) {
           console.log("Dish added to order successfully");
+          console.log(order);
         } else {
           console.log("Failed to add dish to order");
         }
