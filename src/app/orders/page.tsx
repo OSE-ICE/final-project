@@ -45,10 +45,13 @@ export default function OrdersPage() {
         updatedOrder
       );
       console.log(response.data);
-      router.push("../receipts");
     } catch (error) {
       console.error(error);
     }
+
+    setTimeout(() => {
+      router.push("../receipts");
+    }, 2000);
   };
 
   console.log(order);
