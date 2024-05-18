@@ -4,7 +4,8 @@ header {
   align-items: center;
   padding: 0px;
   padding-right: 10px;
-  background-color: #f8f8f8;
+  background-color: rgb(224, 227, 162);
+  border-radius: 10px;
 }
 
 .logo {
@@ -21,12 +22,14 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: black;
+  color: #c16757;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 nav a:hover,
 nav a.active {
-  color: blue;
+  color: #3e6053;
 }
 
 @media (max-width: 600px) {
