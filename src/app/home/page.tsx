@@ -55,6 +55,9 @@ export default function HomePage() {
           </Carousel>
         </div>
         <div className="container">
+          <h2>Dish of the day</h2>
+        </div>
+        <div className="container">
           <h2>Start your order</h2>
           <Link href="../dishes">
             <button className="button">Order</button>
@@ -72,9 +75,6 @@ export default function HomePage() {
           <button className="button" onClick={findOrder}>
             Find
           </button>
-        </div>
-        <div className="container">
-          <h2>Dish of the day</h2>
         </div>
       </div>
     </div>
