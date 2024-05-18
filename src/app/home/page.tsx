@@ -68,7 +68,10 @@ export default function HomePage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <button onClick={findOrder}>Find</button>
+          <br />
+          <button className="button" onClick={findOrder}>
+            Find
+          </button>
         </div>
         <div className="container">
           <h2>Dish of the day</h2>

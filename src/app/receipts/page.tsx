@@ -19,10 +19,10 @@ export default function ReceiptsPage() {
   return (
     <div>
       <Link href="../">
-        <button className="button">Back to home</button>
+        <button className="button button-home">Back to home</button>
       </Link>
       <div className="container-wrapper">
-        <div className="container">
+        <div className="container receipt-container">
           <h2>Receipt</h2>
           <p>
             Dish:{" "}
