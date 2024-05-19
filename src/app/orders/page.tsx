@@ -65,6 +65,7 @@ export default function OrdersPage() {
               Date:
               <input
                 type="date"
+                min={new Date().toISOString().split("T")[0]}
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
               />
