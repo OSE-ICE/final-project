@@ -45,6 +45,17 @@ export default function ReceiptsPage() {
           <p>Time: {(order as any)?.time || (localOrder as any)?.time}</p>
           <p>People: {(order as any)?.people || (localOrder as any)?.people}</p>
           <p>Email: {(order as any)?.email || (localOrder as any)?.email}</p>
+          <p>
+            Price:{" "}
+            {((order as any)?.people || (localOrder as any)?.people) *
+              ((order as any)?.dish
+                ? 2590
+                : 0 + (order as any)?.drinks?.length * 1590 ||
+                  (localOrder as any)?.dish
+                ? 2590
+                : 0 + (localOrder as any)?.drinks?.length * 1590)}{" "}
+            ISK
+          </p>
           <p>Thank you for your order</p>
         </div>
       </div>
