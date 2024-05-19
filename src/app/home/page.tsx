@@ -5,6 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import hamburger from "../assets/hamburger.jpg";
 import steak from "../assets/steak.jpg";
 import pizza from "../assets/pizza.jpg";
+import fish from "../assets/fish.jpg";
 import Link from "next/link";
 import { useState, useContext } from "react";
 import { OrderContext } from "../components/OrderContext";
@@ -55,7 +56,11 @@ export default function HomePage() {
           </Carousel>
         </div>
         <div className="container">
-          <h2>Dish of the day</h2>
+          <div className="dish-day">
+            <h2>Dish of the day</h2>
+            <img className="img-fish" src={fish.src} alt="Fish and chips" />
+            <p>Fish and Chips</p>
+          </div>
         </div>
         <div className="container">
           <h2>Start your order</h2>

@@ -43,6 +43,11 @@ body {
   max-width: 50%;
 }
 
+.carousel .slide .legend {
+  margin-left: -25% !important;
+  margin-bottom: -20px;
+}
+
 .random-meal-img {
   max-width: 50%;
 }
@@ -75,4 +80,14 @@ body {
 
 .img-thumb {
   width: 100px;
+}
+
+.img-fish {
+  max-width: 50%;
+}
+
+.dish-day {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
