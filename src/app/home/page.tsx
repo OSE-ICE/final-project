@@ -15,7 +15,6 @@ import { useRouter } from "next/navigation";
 export default function HomePage() {
   const { order, setOrder } = useContext(OrderContext);
   const [email, setEmail] = useState("");
-
   const router = useRouter(); // Access the router
 
   const findOrder = async () => {
@@ -42,15 +41,19 @@ export default function HomePage() {
         <div className="container">
           <Carousel>
             <div>
-              <img className="carousel-img" src={hamburger.src} />
+              <img
+                className="carousel-img"
+                src={hamburger.src}
+                alt="Hamburger"
+              />
               <p className="legend">Hamburger</p>
             </div>
             <div>
-              <img className="carousel-img" src={steak.src} />
+              <img className="carousel-img" src={steak.src} alt="Steak" />
               <p className="legend">Steak</p>
             </div>
             <div>
-              <img className="carousel-img" src={pizza.src} />
+              <img className="carousel-img" src={pizza.src} alt="Pizza" />
               <p className="legend">Pizza</p>
             </div>
           </Carousel>
